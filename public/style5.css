@@ -1,0 +1,209 @@
+/* --- START OF FILE style5.css --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* General Reset and Root Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --blue: #0071FF;
+    --light-blue: #B6DBF6;
+    --dark-blue: #005DD1;
+    --grey: #f2f2f2;
+}
+
+/* Body Styles - Defined in HTML <style> block for layout */
+/* You might keep layout styles in the HTML or move them here if preferred */
+
+/* Container Styling (Shared) */
+.container {
+    max-width: 45%; /* Kept from HTML style */
+    width: 100%;   /* Ensure it doesn't exceed max-width */
+    text-align: center;
+    padding: 30px; /* Adjusted padding slightly */
+    background: rgba(0, 0, 0, 0.7); /* Slight transparency */
+    border-radius: 20px; /* Adjusted radius */
+    margin: 10px; /* Kept from HTML style */
+    color: white; /* Ensure text inside containers is white */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.2rem; /* Adjusted size slightly */
+    margin-bottom: 20px;
+    color: white; /* Explicitly set color */
+}
+
+h2 {
+     color: white; /* Explicitly set color */
+     margin-bottom: 15px;
+}
+
+h3 {
+    color: #333; /* Color for text inside img-area */
+     margin-bottom: 6px;
+     font-size: 20px;
+     font-weight: 500;
+}
+
+/* Form Styling */
+.form-section {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.1rem; /* Adjusted size */
+    color: white; /* Ensure labels are visible */
+    text-align: left; /* Align labels left */
+}
+
+form input {
+    width: 100%; /* Use full width */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Increased margin */
+    font-size: 1rem;
+    background: var(--grey);
+    color: black; /* Text color inside input */
+}
+
+/* Shared Button Styling (Can be adjusted) */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add some top margin to buttons */
+}
+
+button:hover {
+    background-color: var(--dark-blue);
+}
+
+#custom-btn, #submitBtn {
+     margin-right: 10px; /* Space buttons in image upload */
+}
+
+
+/* Image Area Styling */
+.img-area {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjusted height */
+    background: var(--grey);
+    margin-bottom: 20px; /* Adjusted margin */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px dashed var(--light-blue); /* Add a dashed border */
+}
+
+.img-area .icon {
+    font-size: 80px; /* Adjusted icon size */
+    color: var(--blue); /* Icon color */
+}
+
+.img-area h3 {
+    color: #555; /* Darker grey for placeholder text */
+}
+
+.img-area img { /* Style for the uploaded image preview */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area without distortion */
+    z-index: 100;
+}
+
+.img-area.active { /* Optional: style when image is loaded */
+	border: 3px solid var(--blue);
+}
+
+/* Results Container Styling */
+.results-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px; /* Consistent radius */
+    text-align: center;
+    color: white; /* Ensure text is visible */
+}
+
+#result {
+    font-size: 1.1rem;
+    min-height: 2em; /* Reserve space */
+}
+
+
+/* --- Modal Styles --- */
+.modal {
+    /* Positioning and initial state are handled in HTML <style> */
+    /* Visual Styling: */
+    background-color: white;
+    color: black;           /* Default text color inside modal */
+    padding: 40px 25px 25px 25px; /* Added more top padding for close button */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 300px; /* Ensure minimum width */
+    max-width: 90%;   /* Prevent it being too wide on small screens */
+    border: 1px solid #ccc; /* Added a subtle border */
+}
+
+.modal p {
+    margin-bottom: 20px; /* Space between text and button */
+    font-size: 1.1rem;
+    color: #333; /* Darker text for paragraph */
+}
+
+/* Close Button Styling */
+.close-button {
+    position: absolute;
+    top: 10px;         /* Position from the top edge of the modal */
+    right: 15px;        /* Position from the right edge of the modal */
+    font-size: 28px;    /* Make it larger and easier to click */
+    font-weight: bold;
+    color: #555;       /* Visible color (dark grey) */
+    cursor: pointer;
+    line-height: 1;     /* Prevent extra vertical space */
+    padding: 0;         /* Remove default padding if any */
+    background: none;   /* Ensure no background */
+    border: none;       /* Ensure no border */
+    transition: color 0.2s ease; /* Smooth hover effect */
+}
+
+.close-button:hover {
+    color: #000; /* Darken on hover */
+}
+
+/* Modal Button Specific Styling (if needed) */
+#modalButton {
+    background-color: #4CAF50; /* Green */
+    /* Inherits base button styles, add overrides here */
+}
+
+#modalButton:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Overlay Styles - Defined in HTML <style> block */
+
+/* --- END OF FILE style5.css --- */

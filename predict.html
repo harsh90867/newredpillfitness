@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hover Card - Select Gender</title>
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: start; /* Align to top */
+            align-items: center; /* Center horizontally */
+            min-height: 100vh;
+            background: #000;
+        }
+
+       .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Ensure container takes full width */
+           
+        }
+
+        .title-container {
+            display: flex;
+            justify-content: center; /* Align title to the center */
+            align-items: center; /* Center title vertically */
+            width: 100%;
+            margin-bottom: 20px;
+           padding-top: 20px;
+
+        }
+
+        .title {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+           
+        }
+
+        .wrapper{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+             <h1 class="title">Select Who You Are</h1>
+        </div>
+        <div class="wrapper">
+
+            <!-- Female Card -->
+            <div class="card">
+                <div class="imgContainer" style="--imgUrl: url(./img/thor.jpg)"></div>
+                <div class="img" style="--pngImgUrl: url(./img/thor1.png)">
+                  <div class="overLayer"></div>
+               </div>
+               <a href="section.html?gender=female" class="gender-btn">Female</a> <!-- Moved outside .img -->
+            </div>
+
+            <!-- Male Card -->
+            <div class="card">
+                <div class="imgContainer" style="--imgUrl: url(./img/hulk.jpg)"></div>
+                <div class="img" style="--pngImgUrl: url(./img/hulk.png)">
+                    <div class="overLayer"></div>
+                </div>
+                <a href="section.html?gender=male" class="gender-btn">Male</a> <!-- Moved outside .img -->
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

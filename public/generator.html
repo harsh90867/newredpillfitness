@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Workout & Diet Plan</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <h1>💪 Personalized Workout & Diet Plan Generator 🍎</h1>
+        <p>Achieve your fitness goals with a plan tailored just for you!</p>
+    </header>
+
+    <main>
+        <section id="input-section">
+            <h2>Tell us about yourself</h2>
+            <div class="input-group">
+                <label for="goal">Fitness Goal:</label>
+                <select id="goal">
+                    <option value="gainmuscle">Gain Muscle</option>
+                    <option value="losefat">Lose Fat</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="diet">Dietary Preference:</label>
+                <select id="diet">
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="nonvegetarian">Non-Vegetarian</option>
+                </select>
+            </div>
+
+            <button id="generate-button">Generate Your Plan</button>
+        </section>
+
+        <section id="plan-section" style="display: none;">
+            <h2>Your Personalized Plan</h2>
+            <div id="workout-plan">
+                <h3>🏋️‍♀️ 7-Day Workout Plan 🏋️‍♂️</h3>
+                <ul id="workout-list"></ul>
+            </div>
+
+            <div id="diet-plan">
+                <h3>🥗 Daily Diet Plan 🥗</h3>
+                <ul id="diet-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by redpill fitness</p>
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+</html>

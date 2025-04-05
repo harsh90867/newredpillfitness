@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Pill Fitness Dashboard</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 id="greeting">Hello, <span id="username">Warrior</span></h1>
+            <div class="user-info">
+                 <img src="profile.jpg" alt="Profile Picture" onerror="this.onerror=null;this.src='default-profile.jpg';">
+                <p id="user-display">Username</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="goal-setting" class="widget collapsible">
+            <h2 class="collapsible-header">Set Your Daily Goals</h2>
+            <div class="collapsible-content">
+                <div class="goal-form">
+                    <div class="form-group">
+                        <label for="workout-goal">Workout Time (minutes):</label>
+                        <input type="number" id="workout-goal" name="workout-goal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="water-goal">Water Intake (liters):</label>
+                        <input type="number" step="0.1" id="water-goal" name="water-goal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="calorie-goal">Calorie Intake (kcal):</label>
+                        <input type="number" id="calorie-goal" name="calorie-goal" required>
+                    </div>
+                    <button id="save-goals">Save Goals</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-container">
+            <section class="widget active-minutes">
+                <h2>Workout Time</h2>
+                <p>Goal: <span id="workout-goal-display"></span> minutes</p>
+                <label for="workout-input">Today's Workout:</label>
+                <input type="number" id="workout-input" name="workout-input">
+                <button class="input-btn" data-input="workout">Update</button>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="workout-progress"></div>
+                    <span class="progress-label" id="workout-progress-label">0%</span>
+                </div>
+                <canvas id="activeMinutesChart"></canvas>
+            </section>
+
+            <section class="widget water-intake">
+                <h2>Water Intake</h2>
+                <p>Goal: <span id="water-goal-display"></span> liters</p>
+                <label for="water-input">Today's Intake:</label>
+                <input type="number" step="0.1" id="water-input" name="water-input">
+                <button class="input-btn" data-input="water">Update</button>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="water-progress"></div>
+                    <span class="progress-label" id="water-progress-label">0%</span>
+                </div>
+                <canvas id="waterIntakeChart"></canvas>
+            </section>
+
+            <section class="widget diet">
+                <h2>Calorie Intake</h2>
+                 <p>Goal: <span id="calorie-goal-display"></span> kcal</p>
+                <label for="calorie-input">Today's Intake:</label>
+                <input type="number" id="calorie-input" name="calorie-input">
+                <button class="input-btn" data-input="calorie">Update</button>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="calorie-progress"></div>
+                    <span class="progress-label" id="calorie-progress-label">0%</span>
+                </div>
+                <canvas id="dietChart"></canvas>
+                <button class="add-food-btn">Add Food</button>
+            </section>
+
+            <section class="widget workout">
+                <h2>Workout</h2>
+                <div class="map">
+                    <img src="map.png" alt="Workout">
+                </div>
+                <button class="open-generator-btn">Generate Workout/Diet Plan</button>
+            </section>
+
+            <section class="widget total-progress">
+                <h2>Overall Progress</h2>
+                <canvas id="progressChart"></canvas>
+                <button id="view-progress-btn">View Progress</button>
+            </section>
+
+            <section class="widget progress-history">
+                <h2>Progress History</h2>
+                <div id="progress-history">
+                    <!-- Progress history will be displayed here -->
+                </div>
+            </section>
+        </div>
+<div id="welcome-popup" class="popup">
+            <div class="popup-content">
+                <div id="loading-icon" class="loading-icon">
+                    <div class="loader"></div>
+                </div>
+                <span id="close-popup" class="close-button">×</span>
+                <h2>Welcome to Red Pill Fitness!</h2>
+                <p>Achieve your fitness goals with our personalized dashboard.</p>
+                <button id="lets-go-button"><a href="predict.html">Let's Go!</a></button>
+            </div>
+        </div>
+
+ </main>
+
+    <footer>
+        <p>© 2024 Red Pill Fitness</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script2.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("username").textContent = username;
+                document.getElementById("user-display").textContent = username;
+            }
+            
+            const profilePic = document.getElementById("profile-pic");
+            profilePic.onerror = function () {
+                this.src = "default-profile.jpg";
+            };
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+/* style.css */
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Goal Setting Section */
+.collapsible-header {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.collapsible-header:hover {
+    background-color: #2980b9;
+}
+
+.collapsible-content {
+    padding: 0 1rem;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /*Remove transition for collapsing animation*/
+    margin-bottom: 20px;
+    display: block;
+    /* display: block; to remove the collapsing */
+    height: auto;
+    /* set height auto */
+}
+
+/*.collapsible-content.collapsed {
+    max-height: 0;
+    padding: 0 1rem;
+}*/
+
+.goal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#save-goals {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas: "workout water calorie" "total history workout-widget";
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Widget Styles */
+.widget {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+    /*REMOVE the scroll bar*/
+    overflow: hidden;
+    /*Make dynamic height*/
+    height: auto;
+}
+
+/* Assigning Grid Areas */
+.active-minutes {
+    grid-area: workout;
+}
+
+.water-intake {
+    grid-area: water;
+}
+
+.diet {
+    grid-area: calorie;
+}
+
+.workout {
+    grid-area: workout-widget;
+}
+
+.total-progress {
+    grid-area: total;
+}
+
+.progress-history {
+    grid-area: history;
+}
+
+/* Rest of your CSS (Input Area, Progress Bar, etc.) remains mostly the same */
+
+/* Input Area */
+.widget label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+.widget input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.input-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Progress Bar Styles */
+.progress-bar-container {
+    background-color: #eee;
+    border-radius: 5px;
+    height: 20px;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* Running Activity */
+.workout .map {
+    margin-bottom: 1rem;
+}
+
+.workout .map img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Style for the button to open the generator page */
+.open-generator-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.open-generator-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Addtional Style */
+.widget h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 1000;
+    /* Ensure it's on top of everything */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 1000;
+    /* Ensure it's on top of everything */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    /* Adjust as needed */
+    position: relative;
+    /* Important for positioning the close button */
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+.popup.show .popup-content {
+    opacity: 1; /* Fade in */
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    /* Reduced font size */
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    padding: 3px;
+    /* Adjusted padding */
+    line-height: 1;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+#lets-go-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    /* Reduced padding by half */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 7.5px;
+    /* Reduced margin by half */
+    font-size: 0.8rem;
+    /* Reduced font size */
+}
+
+/* Loading icon styles */
+.loading-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.popup-content.loading #loading-icon {
+    display: flex; /* Make sure it's visible during loading */
+    opacity: 0;/* only apply display none */
+}
+
+.popup-content #loading-icon {
+    display: none;/* initial state */
+}
