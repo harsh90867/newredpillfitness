@@ -1,6 +1,6 @@
 // script1.js
 
-const API_URL = "http://localhost:5000"; // Make sure this matches your backend
+const API_URL = "https://newredpillfitness.onrender.com"; // Make sure this matches your backend
 
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');
@@ -34,7 +34,7 @@ if (loginBtn) {
 // Registration Function
 async function registerUser(username, email, password) {
     try {
-        const response = await fetch('http://localhost:5000/register', {
+        const response = await fetch('https://newredpillfitness.onrender.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ window.signup = signup;
 // Login Function
 async function loginUser(email, password) {
     try {
-        const response = await fetch('http://localhost:5000/login', {
+        const response = await fetch('https://newredpillfitness.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
